@@ -5,7 +5,7 @@
         <h5 v-if="!account.user" class="text-center">To access full functionality please <router-link to="/login">log in</router-link>
             or <router-link to="/register">sign up</router-link> </h5>
         <p class="text-center" v-if="account.user"><router-link to="/users">Debug page with all users and shortcuts</router-link></p>
-        <p class="text-center" >You can check out my <a href="https://github.com" target="_blank">project here</a></p>
+        <p class="text-center" >You can check out my <a href="https://github.com/shumnyj/UILab1-vuejs-mock-urls" target="_blank">project here</a></p>
         <p class="text-center" >Website by Troian Borys (troian.tbv@gmail.com) 2021-2021</p>
     </div>
 </template>
@@ -18,6 +18,6 @@ export default {
         ...mapState({
             account: state => state.account,
         })
-    },
+    }
 };
 </script>

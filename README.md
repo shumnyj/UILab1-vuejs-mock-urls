@@ -1,7 +1,7 @@
 # UILab1
 User interfaces programming lab #1 <br/>
 Виконав: Троян Борис КВ-02мп <br/>
-Звіт: https://docs.google.com/document/d/1w72eQo95QwDmlltqp6H3E4nkef8KKTYmyIgq75rvmf4/edit?usp=sharing <br/>
+Звіт:  https://docs.google.com/document/d/1MheeRjGPxwcIgZyWlnoiAHJNQ9sFS4jodY2h4u3dQUI/edit?usp=sharing <br/>
  
 Загальне завдання: розробити клієнтську частину Web-додатку.<br/>
 Інструменти розробки: VS Code, Javascript/VueJS, Twitter Bootstrap, NodeJS, diagram.net <br/>

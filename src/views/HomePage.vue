@@ -1,6 +1,7 @@
 <template>
     <div>
-        <h4 class='text-center'>Welcome, {{account.user.firstName}}!</h4>
+        <div v-if="account.user"> 
+        <h4 class='text-center'>Welcome to URL shortener, {{account.user.firstName}}!</h4>
         <h5 class='text-center'>Your shortcuts:</h5>
         <em v-if="shortcuts.loading">Loading shortcuts...</em>
         <span v-if="shortcuts.error" class="text-danger">{{shortcuts.error}}</span>
@@ -22,6 +23,12 @@
             </div>
         </div>
         <div><router-link to="/add" class="btn btn-success">Create URL shortcut</router-link></div>
+        </div>
+        <div v-else>
+            <h4 class='text-center'>Welcome to URL shortener!</h4>
+            <h5 class='text-center'>To access your shortcuts or create new ones please 
+                <router-link to="/login">log in</router-link> or <router-link to="/register">sign up</router-link></h5>
+        </div>
     </div>
 </template>
 
