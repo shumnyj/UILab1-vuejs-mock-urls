@@ -43,10 +43,5 @@ export default {
             account: state => state.account,
         })
     },
-    created () {
-    },
-    methods: {
-
-    }
 };
 </script>

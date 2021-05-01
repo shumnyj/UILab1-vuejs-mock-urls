@@ -1,7 +1,7 @@
 <template>
     <nav class="navbar navbar-expand-sm bg-dark justify-content-between sticky-top" >
         
-        <router-link class="navbar-brand" to="/"><img src="static/mylogo.png" style="height:35px;">URL Shortener</router-link>
+        <router-link class="navbar-brand" to="/"><img src="static/mylogo.png" style="height:35px;"><a class="d-sm-inline d-none">URL Shortener</a></router-link>
         <ul class="navbar-nav">
             <li class="nav-item">
                 <router-link class="nav-link" to="/about">About</router-link>

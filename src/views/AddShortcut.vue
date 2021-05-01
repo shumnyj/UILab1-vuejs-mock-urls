@@ -1,6 +1,6 @@
 <template>
     <div>
-        <h2>Add shortcut</h2>
+        <h2 class="text-center" >Add shortcut</h2>
         <form @submit.prevent="handleSubmit">
             <div class="form-group">
                 <label for="link">Link</label>

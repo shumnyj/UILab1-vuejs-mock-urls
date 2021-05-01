@@ -22,7 +22,7 @@
                 </div>
             </div>
         </div>
-        <div><router-link to="/add" class="btn btn-success">Create URL shortcut</router-link></div>
+        <div><router-link to="/add" class="btn btn-success my-2">Create URL shortcut</router-link></div>
         </div>
         <div v-else>
             <h4 class='text-center'>Welcome to URL shortener!</h4>
