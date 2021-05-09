@@ -5,11 +5,11 @@
         <h5 class='text-center'>Your shortcuts:</h5>
         <em v-if="shortcuts.loading">Loading shortcuts...</em>
         <span v-if="shortcuts.error" class="text-danger">{{shortcuts.error}}</span>
-        <div v-if="shortcuts.items">
+        <div v-if="shortcuts.items" id="shortcut-list">
             <div class="media border p-2"  v-for="shortcut in shortcuts.items" :key="shortcut.id" >
                 <div class="media-body">
                     <h6>
-                        <a >{{  shortcut.sk }}</a> <small><i>  {{ "ID:" + shortcut.id }}</i></small>
+                        <a @click="copyLink(shortcut)">{{  shortcut.sk }}</a> <small><i>  {{ "ID:" + shortcut.id }}</i></small>
                         <span v-if="account.user && account.user.id === shortcut.user" class="badge badge-warning badge-pill float-right"> 
                         <a @click="deleteShortcut(shortcut.id)">Delete</a>
                         </span> 
@@ -55,8 +55,17 @@ export default {
         'shortcuts', {
             getUserShortcuts: 'getUserShortcuts',
             deleteShortcut: 'delete',
-        })
-
+        }),
+        copyLink(shortcut)
+        {
+            //console.log(event.target)
+            try {
+                var succ = navigator.clipboard.writeText(shortcut.sk);
+                //shortcut.copied = true;
+            } catch (err) {
+                console.log('Oops, unable to copy');
+            }
+        }
     }
 };
 </script>

@@ -3,7 +3,7 @@
         <h5>Users from secure api end point:</h5>
         <em v-if="users.loading">Loading users...</em>
         <span v-if="users.error" class="text-danger">ERROR: {{users.error}}</span>
-        <ul v-if="users.items">
+        <ul v-if="users.items" id="users-list">
             <li v-for="user in users.items" :key="user.id" >
                 {{user.id + ' ' + user.firstName + ' ' + user.lastName}}
                 <span v-if="user.deleting"><em> - Deleting...</em></span>
@@ -14,7 +14,7 @@
         <h5>Shortcuts:</h5>
         <em v-if="shortcuts.loading">Loading shortcuts...</em>
         <span v-if="shortcuts.error" class="text-danger">{{shortcuts.error}}</span>
-        <div v-if="shortcuts.items">
+        <div v-if="shortcuts.items" id="shortcut-list">
             <div class="media border p-2"  v-for="shortcut in shortcuts.items" :key="shortcut.id">
                 <div class="media-body">
                     <h6>

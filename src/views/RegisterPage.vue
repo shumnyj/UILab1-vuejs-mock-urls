@@ -22,13 +22,13 @@
                 <select v-model="user.sex" name="sex" v-validate="'required'" class="form-control" :class="{ 'is-invalid': submitted && errors.has('username') }" >
                     <option value="Male">Male</option>
                     <option value="Female">Female</option>
-                    <option value="Other" selected="selected">Other</option>
+                    <option value="Other" selected>Other</option>
                 </select>
                 <div v-if="submitted && errors.has('sex')" class="invalid-feedback">{{ errors.first('sex') }}</div>
             </div>
             <div class="form-group">
                 <label for="birthdate">Birthdate</label>
-                <datepicker name="birthdate" v-model="user.birthdate" :disabled-dates="disabledDates" v-validate="'required'"  class="form-control" :class="{ 'is-invalid': submitted && errors.has('birthdate') }" :inputClass="{ 'is-invalid': submitted && errors.has('birthdate'), 'form-control': true }" style="padding:0"></datepicker>
+                <datepicker name="birthdate" v-model="user.birthdate" :disabled-dates="disabledDates" :use-utc="True" v-validate="'required'"  class="form-control" :class="{ 'is-invalid': submitted && errors.has('birthdate') }" :inputClass="{ 'is-invalid': submitted && errors.has('birthdate'), 'form-control': true }" style="padding:0"></datepicker>
                 <div v-if="submitted && errors.has('birthdate')" class="invalid-feedback">{{ errors.first('birthdate') }}</div>
                 <!-- <input type='date' name="birthdate" v-model="user.birthdate" v-validate="'date_between:01.01.1850,01.01.2022|required'" class="form-control" :class="{ 'is-invalid': submitted && errors.has('birthdate') }"/>
                 <div v-if="submitted && errors.has('birthdate')" class="invalid-feedback">{{ errors.first('birthdate') }}</div> -->
@@ -41,7 +41,8 @@
             </div>
             <div class="form-group">
                 <label htmlFor="password">Password</label>
-                <input type="password" v-model="user.password" v-validate="{ required: true, min: 6 }" name="password" class="form-control"  />
+                <input type="password" v-model="user.password" v-validate="{ required: true, min: 6 }" name="password" class="form-control" :class="{ 'is-invalid': submitted && errors.has('password') }"  />
+                <div v-if="submitted && errors.has('password')" class="invalid-feedback">{{ errors.first('password') }}</div>
             </div>
             <div class="form-group">
                 <button class="btn btn-primary" :disabled="status.registering">Register</button>
