@@ -1,5 +1,7 @@
-import config from 'config';
+//import config from 'config';
 import { authHeader } from '../_helpers';
+
+const config = {apiUrl:'http://localhost:4000'}
 
 export const userService = {
     login,
@@ -17,7 +19,7 @@ function login(username, password) {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ username, password })
     };
-
+    //console.log(config)
     return fetch(`${config.apiUrl}/users/authenticate`, requestOptions)
         .then(handleResponse)
         .then(user => {
@@ -42,7 +44,7 @@ function register(user) {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(user)
     };
-
+    //console.log(config)
     return fetch(`${config.apiUrl}/users/register`, requestOptions).then(handleResponse);
 }
 
@@ -51,7 +53,7 @@ function getAll() {
         method: 'GET',
         headers: authHeader()
     };
-
+    //console.log(config)
     return fetch(`${config.apiUrl}/users`, requestOptions).then(handleResponse);
 }
 
@@ -61,7 +63,7 @@ function getById(id) {
         method: 'GET',
         headers: authHeader()
     };
-
+    //console.log(config)
     return fetch(`${config.apiUrl}/users/${id}`, requestOptions).then(handleResponse);
 }
 
@@ -71,7 +73,7 @@ function update(user) {
         headers: { ...authHeader(), 'Content-Type': 'application/json' },
         body: JSON.stringify(user)
     };
-
+    //console.log(config)
     return fetch(`${config.apiUrl}/users/${user.id}`, requestOptions).then(handleResponse);
 }
 

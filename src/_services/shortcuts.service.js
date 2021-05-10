@@ -1,5 +1,7 @@
-import config from 'config';
+//import config from 'config';
 import { authHeader } from '../_helpers';
+
+const config = {apiUrl:'http://localhost:4000'}
 
 export const shortcutsService = {
     addShortcut,

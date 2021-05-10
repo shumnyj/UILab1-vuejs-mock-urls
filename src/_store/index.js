@@ -6,13 +6,20 @@ import { account } from './account.module';
 import { users } from './users.module';
 import { shortcuts } from './shortcuts.module';
 
-Vue.use(Vuex);
-
-export const store = new Vuex.Store({
+/*export const store = new Vuex.Store({
     modules: {
         alert,
         account,
         users,
         shortcuts
     }
-});
+});*/
+
+export const store = {
+    modules: {
+        alert,
+        account,
+        users,
+        shortcuts
+    }
+}
